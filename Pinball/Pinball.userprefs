@@ -1,0 +1,15 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/FlipperR.cs">
+    <Files>
+      <File FileName="../../BeachVolley/Assets/PaddleController.cs" Line="55" Column="1" />
+      <File FileName="../../BeachVolley/Assets/Ball.cs" Line="92" Column="1" />
+      <File FileName="Assets/FlipperR.cs" Line="31" Column="114" />
+      <File FileName="Assets/FlipperL.cs" Line="15" Column="33" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

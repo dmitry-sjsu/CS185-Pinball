@@ -28,12 +28,10 @@ public class FlipperR : MonoBehaviour {
 	void Flip()
 	{
 		this.gameObject.transform.rotation = Quaternion.Slerp(gameObject.transform.localRotation, upPoint, flipperSpeed * Time.fixedDeltaTime);
-		GameObject.FindGameObjectWithTag("Score").guiText.text = this.gameObject.transform.rotation.y.ToString() + "U";
 	}
 	
 	void Fall()
 	{
 		this.gameObject.transform.rotation = Quaternion.Slerp(gameObject.transform.localRotation, downPoint, flipperSpeed * Time.fixedDeltaTime);
-		GameObject.FindGameObjectWithTag("Score").guiText.text = this.gameObject.transform.rotation.y.ToString() + "D";
 	}
 }

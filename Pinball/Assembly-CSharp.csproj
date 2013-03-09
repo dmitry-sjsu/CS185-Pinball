@@ -45,8 +45,10 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Ball.cs" />
-     <Compile Include="Assets\FlipperL.cs" />
-     <Compile Include="Assets\FlipperR.cs" />
+     <Compile Include="Assets\CameraMotion.cs" />
+     <Compile Include="Assets\Flipper.cs" />
+     <Compile Include="Assets\HingeL.cs" />
+     <Compile Include="Assets\HingeR.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

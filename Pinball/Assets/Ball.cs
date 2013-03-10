@@ -9,7 +9,7 @@ public class Ball : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-		this.transform.position = new Vector3 (0.1f, 0f, -.05f);
+		this.transform.position = new Vector3 (0.85f, 0f, -.05f);
 		this.gameObject.rigidbody.velocity = ballVelocity;
 		GameObject.FindGameObjectWithTag("BallsLeft").guiText.text = 				
 					numBallsUsed.ToString();

@@ -21,8 +21,10 @@ public class Flipper : MonoBehaviour {
 		{
 			exitRotation = this.transform.parent.transform.rotation;
 			rotationChange = Quaternion.Angle(exitRotation, enterRotation);
-			GameObject.FindGameObjectWithTag("Score").guiText.text = 				
-					rotationChange.ToString();
+			Debug.Log (rotationChange);
+			Debug.DrawLine( this.transform.position, obj.transform.position, Color.red, 5);
+	//		GameObject.FindGameObjectWithTag("Score").guiText.text = 				
+	//				rotationChange.ToString();
 			if (rotationChange > 15)
 			{
 				Vector3 velocity = obj.rigidbody.velocity;

@@ -20,7 +20,7 @@ public class CameraMotion : MonoBehaviour {
 		{
 			if (prevPosition.y < topY)
 			{
-				prevPosition = new Vector3(prevPosition.x, prevPosition.y + ball.rigidbody.velocity.y*Time.deltaTime*.9f, prevPosition.z);
+				prevPosition = new Vector3(prevPosition.x, prevPosition.y + Mathf.Abs(ball.rigidbody.velocity.y*Time.deltaTime*.9f), prevPosition.z);
 				this.transform.position = prevPosition;
 			}
 		}
@@ -31,7 +31,7 @@ public class CameraMotion : MonoBehaviour {
 			{
 				if (prevPosition.y > bottomY)
 				{
-					prevPosition = new Vector3(prevPosition.x, prevPosition.y + ball.rigidbody.velocity.y*Time.deltaTime*1.1f, prevPosition.z);
+					prevPosition = new Vector3(prevPosition.x, prevPosition.y - Mathf.Abs (ball.rigidbody.velocity.y*Time.deltaTime*1.1f), prevPosition.z);
 					this.transform.position = prevPosition;
 				}
 			}			

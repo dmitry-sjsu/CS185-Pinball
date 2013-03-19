@@ -9,8 +9,14 @@ public class GateScript : MonoBehaviour {
 	void OnCollisionEnter( Collision obj ) {
 		--health;
 		
+		if( health <= 0 ) {
+			Destroy ( gameObject );
+		}
+
 		
 	}
+	
+
 }
 
 

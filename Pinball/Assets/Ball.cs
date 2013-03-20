@@ -6,8 +6,6 @@ public class Ball : MonoBehaviour {
 	Vector3 ballVelocity = new Vector3 (0f, 0f, 0f);
 	private int numBallsUsed = 0;
 	GameObject[] topFlippers;
-	GameObject[] gateRelease;
-	GameObject gate;
 	
 	// Use this for initialization
 	void Start () {
@@ -16,8 +14,6 @@ public class Ball : MonoBehaviour {
 		GameObject.FindGameObjectWithTag("BallsLeft").guiText.text = 				
 					numBallsUsed.ToString();
 		topFlippers = GameObject.FindGameObjectsWithTag("Flipper2");
-		gateRelease = GameObject.FindGameObjectsWithTag("GateRelease");
-		gate = GameObject.FindGameObjectWithTag("Gate");
 	}
 		
 	void OnCollisionEnter (Collision obj) {
@@ -37,8 +33,6 @@ public class Ball : MonoBehaviour {
 		{
 			BottomSide();
 		}
-		if (obj.gameObject.tag == "GateRelease")
-			LowerGate();
 	}
 	
 	void TopSide() {
@@ -55,10 +49,5 @@ public class Ball : MonoBehaviour {
 		{
 			o.transform.position = new Vector3(o.transform.position.x, o.transform.position.y, .15f);
 		}
-	}
-	
-	void LowerGate() {
-		gate.transform.position = new Vector3(gate.transform.position.x, gate.transform.position.y, .15f);
-	}
-	
+	}	
 }

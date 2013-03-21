@@ -13,7 +13,7 @@ public class TriggerLight : MonoBehaviour {
 		gate = GameObject.FindGameObjectWithTag("Gate");
 	}
 	
-	void OnTriggerExit (Collider obj) {
+	void OnCollisionExit (Collision obj) {
 		this.gameObject.light.enabled = true;
 		this.renderer.material.mainTexture = litTexture;
 		this.light.enabled = true;

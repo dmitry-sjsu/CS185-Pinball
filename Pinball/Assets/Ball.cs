@@ -4,7 +4,7 @@ using System.Collections;
 public class Ball : MonoBehaviour {
 	
 	Vector3 ballVelocity = new Vector3 (0f, 0f, 0f);
-	private int numBallsUsed = 0;
+	private int numBallsUsed = 7;
 	GameObject[] topFlippers;
 	
 	// Use this for initialization
@@ -19,9 +19,14 @@ public class Ball : MonoBehaviour {
 	void OnCollisionEnter (Collision obj) {
 		if (obj.gameObject.tag == "Bottom")
 		{
-			numBallsUsed++;
+			numBallsUsed--;			
 			this.Start();
+			
+			if(numBallsUsed <=0){
+			Debug.Log("Game Over");
+			Destroy(gameObject); }
 		}
+		
 	}
 	
 	void OnTriggerExit (Collider obj) {

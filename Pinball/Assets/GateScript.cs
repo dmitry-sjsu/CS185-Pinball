@@ -7,7 +7,7 @@ public class GateScript : MonoBehaviour {
 	
 	void Start()
 	{
-		triggers = new bool[2] {false, false};
+		triggers = new bool[3] { false, false, false};
 	}
 
 	void LightTriggerHit(int id)

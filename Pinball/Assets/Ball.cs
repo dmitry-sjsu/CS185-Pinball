@@ -34,7 +34,7 @@ public class Ball : MonoBehaviour {
 		{
 			TopSide();
 		}
-		if ((obj.gameObject.tag == "Level2") && (this.transform.position.y < 1.1))
+		if ((obj.gameObject.tag == "Level2") && (this.transform.position.y < 1))
 		{
 			BottomSide();
 		}

@@ -4,13 +4,14 @@ using System.Collections;
 public class TriggerLight : MonoBehaviour {
 	public Texture2D litTexture;
 	public Texture2D darkTexture;
+	public string target;
 	public int id;
 	
 	private GameObject gate;
 	
 	// Use this for initialization
 	void Start () {
-		gate = GameObject.FindGameObjectWithTag("Gate");
+		gate = GameObject.FindGameObjectWithTag(target);
 	}
 	
 	void OnCollisionExit (Collision obj) {

@@ -5,10 +5,12 @@ public class GateScript : MonoBehaviour {
 
 	public bool[] triggers;
 	private GameObject tramp;
+	public bool gateLowered;
 	
 	void Start()
 	{
 		tramp = GameObject.FindGameObjectWithTag("Tramp");
+		gateLowered = false;
 	}
 
 	void LightTriggerHit(int id)
@@ -22,15 +24,15 @@ public class GateScript : MonoBehaviour {
 				openGate = false;
 		
 		if (openGate)
-			LowerGate();
+			gateLowered = true;
 	}
 	
-	void LowerGate()
+	void Update()
 	{
-		this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, .15f);
-		if (this.tag == "TopGate")
-			tramp.transform.position = new Vector3(tramp.transform.position.x, tramp.transform.position.y, -.1f);  
-			
+		 if (gateLowered)
+		{
+			transform.position = Vector3.Lerp (transform.position, new Vector3(-0.03681336f,0.71f,0.2f), Time.deltaTime*2);	
+		}
 	}
 }
 

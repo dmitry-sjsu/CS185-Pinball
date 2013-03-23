@@ -6,6 +6,8 @@ public class Ball : MonoBehaviour {
 	Vector3 ballVelocity = new Vector3 (0f, 0f, 0f);
 	private int numBallsUsed = 7;
 	GameObject[] topFlippers;
+	public GameObject LaunchBlock;
+	public BlockBehavior blockController;
 	
 	// Use this for initialization
 	void Start () {
@@ -14,6 +16,9 @@ public class Ball : MonoBehaviour {
 		GameObject.FindGameObjectWithTag("BallsLeft").guiText.text = 				
 					numBallsUsed.ToString();
 		topFlippers = GameObject.FindGameObjectsWithTag("Flipper2");
+		LaunchBlock = GameObject.Find("LauncherBlock");
+		blockController = (BlockBehavior) LaunchBlock.GetComponent(typeof(BlockBehavior));
+		blockController.unBlock();
 	}
 		
 	void OnCollisionEnter (Collision obj) {

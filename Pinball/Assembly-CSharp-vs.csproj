@@ -52,9 +52,11 @@
      <Compile Include="Assets\FlashingLight.cs" />
      <Compile Include="Assets\Flipper.cs" />
      <Compile Include="Assets\GateScript.cs" />
+     <Compile Include="Assets\GenericPlaySoundOnCollision.cs" />
      <Compile Include="Assets\HingeL.cs" />
      <Compile Include="Assets\HingeR.cs" />
      <Compile Include="Assets\LauncherBehavior.cs" />
+     <Compile Include="Assets\MainMenuGui.cs" />
      <Compile Include="Assets\Timer.cs" />
      <Compile Include="Assets\Trampoline.cs" />
      <Compile Include="Assets\TriggerLight.cs" />

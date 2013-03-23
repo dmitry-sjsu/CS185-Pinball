@@ -53,6 +53,7 @@ public class Flipper : MonoBehaviour {
 				obj.rigidbody.velocity = velocity;
 			}
 		}
+		audio.Play();
 	}
 	
 /*	void OnCollisionEnter (Collision obj) {

@@ -22,6 +22,7 @@ public class Ball : MonoBehaviour {
 	}
 		
 	void OnCollisionEnter (Collision obj) {
+		
 		if (obj.gameObject.tag == "Bottom")
 		{
 			numBallsUsed--;			
@@ -30,6 +31,10 @@ public class Ball : MonoBehaviour {
 			if(numBallsUsed <=0){
 			Debug.Log("Game Over");
 			Destroy(gameObject); }
+		}
+		else
+		{
+			audio.Play ();	
 		}
 		
 	}

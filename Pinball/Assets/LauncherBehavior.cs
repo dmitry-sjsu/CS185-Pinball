@@ -29,6 +29,7 @@ public class LauncherBehavior : MonoBehaviour
 		{
 			rigidbody.AddForce (new Vector3(0, pullBackTime*1000,0));
 			pullBackTime = 0;
+			audio.Play();
 		}
 		
 		if (transform.position.y > -0.7f)

@@ -19,5 +19,6 @@ public class TriggerLight : MonoBehaviour {
 		this.renderer.material.mainTexture = litTexture;
 		this.light.enabled = true;
 		gate.SendMessage("LightTriggerHit", id);
+		audio.Play();
 	}
 }

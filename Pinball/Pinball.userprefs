@@ -2,8 +2,9 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\HUDScript.cs">
     <Files>
-      <File FileName="Assets\HUDScript.cs" Line="7" Column="16" />
-      <File FileName="Assets\Ball.cs" Line="32" Column="1" />
+      <File FileName="Assets\EnemyHealth.cs" Line="34" Column="4" />
+      <File FileName="Assets\HUDScript.cs" Line="26" Column="4" />
+      <File FileName="Assets\Ball.cs" Line="24" Column="74" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

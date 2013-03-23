@@ -1,8 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/GateScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\HUDScript.cs">
     <Files>
-      <File FileName="Assets/GateScript.cs" Line="29" Column="4" />
+      <File FileName="Assets\HUDScript.cs" Line="7" Column="16" />
+      <File FileName="Assets\Ball.cs" Line="32" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

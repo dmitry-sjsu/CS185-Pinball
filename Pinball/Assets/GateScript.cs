@@ -24,14 +24,19 @@ public class GateScript : MonoBehaviour {
 				openGate = false;
 		
 		if (openGate)
+		{
 			gateLowered = true;
+			if (this.tag == "TopGate")
+				tramp.transform.position = new Vector3(tramp.transform.position.x, tramp.transform.position.y, -.1f);  
+		}
+			
 	}
 	
 	void Update()
 	{
 		 if (gateLowered)
 		{
-			transform.position = Vector3.Lerp (transform.position, new Vector3(-0.03681336f,0.71f,0.2f), Time.deltaTime*2);	
+			transform.position = Vector3.Lerp (transform.position, new Vector3(-0.03681336f,0.71f,0.2f), Time.deltaTime*2);				
 		}
 	}
 }

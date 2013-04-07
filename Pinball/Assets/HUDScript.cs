@@ -13,6 +13,7 @@ public class HUDScript : MonoBehaviour {
 	bool start;
 	int tutorialPage;
 	private GameObject ball;
+	private GameObject titleScreen;
 	int enemiesDestroyed;
 		
 	public void decreaseBalls()
@@ -32,8 +33,9 @@ public class HUDScript : MonoBehaviour {
 	void Start()
 	{
 		ball = GameObject.FindGameObjectWithTag("Ball");
+		titleScreen = GameObject.FindGameObjectWithTag("TitleScreen");
 		win = false;
-		tutorialPage = 1;
+		tutorialPage = 0;
 		enemiesDestroyed = 0;
 	}
 
@@ -127,6 +129,25 @@ public class HUDScript : MonoBehaviour {
 						Application.Quit();	
 					}
 					break;
+				case 0:
+					if (GUI.Button (new Rect ((Screen.width/2) - 75,(Screen.height/2) - 70, 130, 50), "Tutorial")) 
+					{
+						tutorialPage = 1;
+						Destroy(titleScreen);
+					}
+					if (GUI.Button (new Rect ((Screen.width/2) - 75,(Screen.height/2) - 10, 130, 50), "Play")) 
+					{
+						start = true;
+						startTime = Time.time;
+						ball.SendMessage("Start", true);
+						Destroy(titleScreen);
+					}
+					if (GUI.Button (new Rect ((Screen.width/2) - 75,(Screen.height/2) + 50, 130, 50), "Quit"))
+					{
+						Application.Quit();	
+					}
+					break;
+
 				}
 			}
 		}

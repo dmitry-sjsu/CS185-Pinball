@@ -18,17 +18,18 @@ public class EnemyHealth : MonoBehaviour {
 	}
 
 	void OnCollisionEnter( Collision obj ) {
+		audio.Play();
 		--health;
 		
-		if(health <= 12 && health > 7)
+		if(health <= 3 && health > 2)
 		{
 			renderer.material.mainTexture = minorDamage;
 		}
-		else if (health <= 7 && health > 2)
+		else if (health <= 2 && health > 1)
 		{
 			renderer.material.mainTexture = moderateDamage;
 		}
-		else if (health <= 2 && health > 0)
+		else if (health <= 1 && health > 0)
 		{
 			renderer.material.mainTexture = severeDamage;
 		}

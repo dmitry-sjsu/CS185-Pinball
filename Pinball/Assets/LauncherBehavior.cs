@@ -17,7 +17,7 @@ public class LauncherBehavior : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-	 	if (Input.GetKey ("left ctrl" ))
+	 	if (Input.GetKey ("space" ))
 		{	
 			rigidbody.AddForce (new Vector3(0,-50,0));
 			if(pullBackTime < 10000)
@@ -25,7 +25,7 @@ public class LauncherBehavior : MonoBehaviour
 			pullBackTime++;
 			}
 		}
-		else if (Input.GetKeyUp ("left ctrl"))
+		else if (Input.GetKeyUp ("space"))
 		{
 			rigidbody.AddForce (new Vector3(0, pullBackTime*1000,0));
 			pullBackTime = 0;

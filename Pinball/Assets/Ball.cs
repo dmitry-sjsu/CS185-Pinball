@@ -3,8 +3,7 @@ using System.Collections;
 
 public class Ball : MonoBehaviour {
 	
-	Vector3 ballVelocity = new Vector3 (0f, 0f, 0f);
-	private int numBallsUsed = 7;
+	Vector3 ballVelocity = Vector3.zero;
 	GameObject[] topFlippers;
 	public GameObject LaunchBlock;
 	public BlockBehavior blockController;
@@ -13,35 +12,36 @@ public class Ball : MonoBehaviour {
 	
 	
 	// Use this for initialization
-	void Start () {
-		this.transform.position = new Vector3 (0.85f, -.3f, -.05f);
-		this.gameObject.rigidbody.velocity = ballVelocity;
-		topFlippers = GameObject.FindGameObjectsWithTag("Flipper2");
-		LaunchBlock = GameObject.Find("LauncherBlock");
-		blockController = (BlockBehavior) LaunchBlock.GetComponent(typeof(BlockBehavior));
-		blockController.unBlock();
+	void Start (bool ready) {
 		mainCamera = GameObject.Find("Main Camera");
 		hudController = (HUDScript) mainCamera.GetComponent(typeof(HUDScript));
+		if (ready)
+		{
+			this.rigidbody.isKinematic = false;
+			this.transform.position = new Vector3 (0.85f, -.5f, -.05f);
+			this.rigidbody.velocity = ballVelocity;
+			this.rigidbody.angularVelocity = ballVelocity;
+			topFlippers = GameObject.FindGameObjectsWithTag("Flipper2");
+			LaunchBlock = GameObject.Find("LauncherBlock");
+			blockController = (BlockBehavior) LaunchBlock.GetComponent(typeof(BlockBehavior));
+			blockController.unBlock();
+		}
+		else
+		{
+			this.rigidbody.isKinematic = true;
+		}
 	}
 		
 	void OnCollisionEnter (Collision obj) {
 		
 		if (obj.gameObject.tag == "Bottom")
 		{
-			numBallsUsed--;
 			hudController.decreaseBalls();
-			
-			this.Start();
-			
-			if(numBallsUsed <=0){
-			Debug.Log("Game Over");
-			Destroy(gameObject); }
+			this.rigidbody.velocity = Vector3.zero;		
+			this.Start(true);
 		}
 		else
-		{
-			audio.Play ();	
-		}
-		
+			audio.Play();
 	}
 	
 	void OnTriggerExit (Collider obj) {
@@ -68,4 +68,11 @@ public class Ball : MonoBehaviour {
 			o.transform.position = new Vector3(o.transform.position.x, o.transform.position.y, .15f);
 		}
 	}	
+	
+	void Hide()
+	{
+		this.transform.position = new Vector3 (0f, -.5f, .05f);
+		this.rigidbody.velocity = ballVelocity;
+		this.rigidbody.angularVelocity = ballVelocity;
+	}		
 }
